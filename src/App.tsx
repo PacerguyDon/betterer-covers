@@ -4,6 +4,7 @@ import { toPng } from 'html-to-image'
 import './App.css'
 
 import { CoverPreview } from './components/CoverPreview'
+import { trackEvent } from './lib/analytics'
 import { buildPalette, detectBrand } from './lib/brands'
 import {
   ASPECT_RATIO_OPTIONS,
@@ -638,6 +639,10 @@ function App() {
       link.download = `${selectedList.ids.slug}-${aspectRatio}-${designFamilyId}.png`
       link.href = dataUrl
       link.click()
+      trackEvent(
+        `download/${aspectRatio}/${designFamilyId}`,
+        `Download PNG: ${selectedList.name}`,
+      )
     } catch (error) {
       setErrorMessage(
         error instanceof Error
@@ -651,6 +656,9 @@ function App() {
 
   function handleListChange(nextSlug: string) {
     const nextList = lists.find((entry) => entry.ids.slug === nextSlug)
+    if (nextList) {
+      trackEvent(`list/${nextList.ids.slug}`, `Selected list: ${nextList.name}`)
+    }
 
     startTransition(() => {
       setSelectedSlug(nextSlug)
@@ -662,6 +670,8 @@ function App() {
   }
 
   function handleAspectRatioChange(nextAspectRatio: typeof aspectRatio) {
+    trackEvent(`aspect-ratio/${nextAspectRatio}`, `Aspect ratio: ${nextAspectRatio}`)
+
     startTransition(() => {
       setAspectRatio(nextAspectRatio)
     })
@@ -689,6 +699,36 @@ function App() {
   function handleSuggestedUser(user: string) {
     setSourceUserInput(user)
     handleLoadUser(user)
+  }
+
+  function handleDesignFamilyChange(nextDesignFamilyId: typeof designFamilyId) {
+    trackEvent(`style/${nextDesignFamilyId}`, `Style: ${nextDesignFamilyId}`)
+    setDesignFamilyId(nextDesignFamilyId)
+  }
+
+  function handlePosterLayoutChange(nextPosterLayoutId: typeof posterLayoutId) {
+    trackEvent(`posters/${nextPosterLayoutId}`, `Poster layout: ${nextPosterLayoutId}`)
+    setPosterLayoutId(nextPosterLayoutId)
+  }
+
+  function handleTitleFontChange(nextTitleFontId: CoverFontId) {
+    trackEvent(`font/${nextTitleFontId}`, `Font: ${nextTitleFontId}`)
+    setTitleFontId(nextTitleFontId)
+  }
+
+  function handleTitleSizeChange(nextTitleSizeId: TitleSizeId) {
+    trackEvent(`font-size/${nextTitleSizeId}`, `Font size: ${nextTitleSizeId}`)
+    setTitleSizeId(nextTitleSizeId)
+  }
+
+  function handleBackgroundModeChange(nextBackgroundMode: BackgroundMode) {
+    trackEvent(`background/${nextBackgroundMode}`, `Background: ${nextBackgroundMode}`)
+    setBackgroundMode(nextBackgroundMode)
+  }
+
+  function handleShuffleMosaic() {
+    trackEvent('shuffle-mosaic', 'Shuffle mosaic')
+    setShuffleSeed((value) => value + 1)
   }
 
   return (
@@ -900,7 +940,9 @@ function App() {
                   className="field-input field-select"
                   id="design-select"
                   onChange={(event) =>
-                    setDesignFamilyId(event.target.value as typeof designFamilyId)
+                    handleDesignFamilyChange(
+                      event.target.value as typeof designFamilyId,
+                    )
                   }
                   value={designFamilyId}
                 >
@@ -924,7 +966,9 @@ function App() {
                   className="field-input field-select"
                   id="poster-layout-select"
                   onChange={(event) =>
-                    setPosterLayoutId(event.target.value as typeof posterLayoutId)
+                    handlePosterLayoutChange(
+                      event.target.value as typeof posterLayoutId,
+                    )
                   }
                   value={posterLayoutId}
                 >
@@ -950,7 +994,7 @@ function App() {
                   className="field-input field-select"
                   id="font-select"
                   onChange={(event) =>
-                    setTitleFontId(event.target.value as CoverFontId)
+                    handleTitleFontChange(event.target.value as CoverFontId)
                   }
                   value={titleFontId}
                 >
@@ -966,7 +1010,7 @@ function App() {
                   className="field-input field-select"
                   id="font-size-select"
                   onChange={(event) =>
-                    setTitleSizeId(event.target.value as TitleSizeId)
+                    handleTitleSizeChange(event.target.value as TitleSizeId)
                   }
                   value={titleSizeId}
                 >
@@ -995,7 +1039,7 @@ function App() {
                     onChange={(event) => {
                       const nextColor = normalizeHexColor(event.target.value)
                       setBackgroundColor(nextColor)
-                      setBackgroundMode('custom')
+                      handleBackgroundModeChange('custom')
                     }}
                     type="color"
                     value={backgroundColor ?? DEFAULT_BACKGROUND_PICKER}
@@ -1004,7 +1048,7 @@ function App() {
                     className={`field-color-reset ${
                       backgroundMode === 'default' ? 'is-active' : ''
                     }`}
-                    onClick={() => setBackgroundMode('default')}
+                    onClick={() => handleBackgroundModeChange('default')}
                     type="button"
                   >
                     Default
@@ -1013,7 +1057,7 @@ function App() {
                     className={`field-color-reset ${
                       backgroundMode === 'tint' ? 'is-active' : ''
                     }`}
-                    onClick={() => setBackgroundMode('tint')}
+                    onClick={() => handleBackgroundModeChange('tint')}
                     type="button"
                   >
                     Tint
@@ -1022,7 +1066,7 @@ function App() {
                     className={`field-color-reset ${
                       backgroundMode === 'transparent' ? 'is-active' : ''
                     }`}
-                    onClick={() => setBackgroundMode('transparent')}
+                    onClick={() => handleBackgroundModeChange('transparent')}
                     type="button"
                   >
                     Transparent
@@ -1055,7 +1099,7 @@ function App() {
             <div className="panel-actions">
               <button
                 className="action-button action-button--ghost"
-                onClick={() => setShuffleSeed((value) => value + 1)}
+                onClick={handleShuffleMosaic}
                 type="button"
               >
                 Shuffle mosaic
