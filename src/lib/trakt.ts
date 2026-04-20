@@ -5,9 +5,14 @@ import type {
 } from '../types'
 
 async function fetchJson<T>(input: string, signal?: AbortSignal): Promise<T> {
-  const response = await fetch(input, { signal })
-return (await response.json()) as T
+  try {
+    const response = await fetch(input, { signal });
+    return (await response.json()) as T;
+  } catch (e) {
+    return {} as T;
+  }
 }
+
 
 export function fetchTraktContext(signal?: AbortSignal) {
   return fetchJson<TraktContext>('/api/trakt/context', signal)
