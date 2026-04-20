@@ -9,7 +9,7 @@ async function fetchJson<T>(input: string, signal?: AbortSignal): Promise<T> {
     const response = await fetch(input, { signal });
     return (await response.json()) as T;
   } catch (e) {
-    return {} as T;
+    return null as any;
   }
 }
 
