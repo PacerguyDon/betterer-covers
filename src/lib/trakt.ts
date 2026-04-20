@@ -6,8 +6,7 @@ import type {
 
 async function fetchJson<T>(input: string, signal?: AbortSignal): Promise<T> {
   const response = await fetch(input, { signal })
-
-  return (await response.json()) as T
+return (await response.json()) as T
 }
 
 export function fetchTraktContext(signal?: AbortSignal) {
