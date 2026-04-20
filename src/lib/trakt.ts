@@ -2,6 +2,7 @@ import type { TraktContext, TraktList, TraktListItem } from '../types'
 
 async function fetchJson<T>(input: string, signal?: AbortSignal): Promise<T> {
   const response = await fetch(input, { signal });
+  if (!response.ok) return {} as T;
   return (await response.json()) as T;
 }
 
@@ -17,7 +18,7 @@ export function fetchListItemsForUser({ user, slug, signal }: { user: string; sl
   return fetchJson<TraktListItem[]>(`/api/trakt/users/${encodeURIComponent(user)}/lists/${encodeURIComponent(slug)}/items`, signal);
 }
 
-// This is the missing link the logs were complaining about:
-export function toPosterProxyUrl(url: string, _type: any, _size: any) {
+// Fixed to accept the 3 arguments the build is looking for
+export function toPosterProxyUrl(url: string, type: string, size: string) {
   return url;
 }
