@@ -19,7 +19,7 @@ async function fetchJson<T>(input: string, signal?: AbortSignal): Promise<T> {
       // Ignore JSON parsing failures and fall back to the status text.
     }
 
-    throw new Error(message)
+      return {} as T
   }
 
   return (await response.json()) as T
