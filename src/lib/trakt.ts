@@ -21,7 +21,4 @@ export function toPosterProxyUrl(url: string, type?: any, size?: any) {
   return url;
 }
 
-export function fetchTraktContext(signal?: AbortSignal) {
-  return fetchJson<TraktContext>('/api/trakt/context', signal);
-}
 
