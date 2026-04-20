@@ -90,6 +90,15 @@ const BRAND_LIBRARY: BrandDefinition[] = [
     aspectRatio: 216 / 71.15,
   },
   {
+    id: 'peacock',
+    label: 'Peacock',
+    kind: 'mask',
+    asset: '/logos/peacock.svg',
+    accent: '#000000',
+    logoWidth: '50%',
+    aspectRatio: 179 / 55,
+  },
+  {
     id: 'max',
     label: 'Max',
     kind: 'simple',
@@ -173,6 +182,10 @@ export function detectBrand(name: string) {
 
   if (/\bhulu\b/.test(lowerName)) {
     return BRAND_LIBRARY.find((brand) => brand.id === 'hulu') ?? null
+  }
+  
+    if (/\bpeacock\b/.test(lowerName)) {
+    return BRAND_LIBRARY.find((brand) => brand.id === 'peacock') ?? null
   }
 
   if (/\bmax\b/.test(lowerName)) {
