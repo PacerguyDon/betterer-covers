@@ -18,6 +18,7 @@ export function fetchListItemsForUser({ user, slug, signal }: { user: string; sl
   return fetchJson<TraktListItem[]>(`/api/trakt/users/${encodeURIComponent(user)}/lists/${encodeURIComponent(slug)}/items`, signal);
 }
 
-export function toPosterProxyUrl(url: string | null, _type?: any, _size?: any) {
+export function toPosterProxyUrl(url: string | null) {
   return url ?? '';
 }
+
