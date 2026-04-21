@@ -2,6 +2,7 @@
   "name": "betterer-covers",
   "private": true,
   "version": "0.0.0",
+  "homepage": ".",
   "type": "module",
   "scripts": {
     "dev": "concurrently -k -n api,web \"node server.mjs\" \"vite --host\"",
