@@ -388,11 +388,5 @@ if (isProduction) {
   })
 }
 
-const server = app.listen(port, () => {
-  const modeLabel = isProduction ? 'production' : 'api'
-  console.log(`betterer-covers ${modeLabel} server listening on ${port}`)
-})
+export default app;
 
-// Keep a process-global reference to the HTTP server so Node doesn't
-// garbage-collect and close it shortly after boot in long-lived dev sessions.
-globalThis.__bettererCoversServer = server
