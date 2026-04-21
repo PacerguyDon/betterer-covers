@@ -197,15 +197,17 @@ function chooseInitialList(lists: TraktList[]) {
     'Latest Disney+ Shows',
   ]
 
+    // 1. Add (lists || []) to the map
   const exactMatch = preferredNames
-    .map((name) => lists.find((list) => list.name === name))
+    .map((name) => (lists || []).find((list) => list.name === name))
     .find(Boolean)
 
   if (exactMatch) {
     return exactMatch
   }
 
-  return lists.find((list) => detectBrand(list.name)) ?? lists[0]
+  // 2. Add (lists || []) to the brand detection and the final fallback
+  return (lists || []).find((list) => detectBrand(list?.name)) ?? (lists?.[0] || null)
 }
 
 function mergeRecentUsers(existingUsers: string[], nextUsers: string[]) {
