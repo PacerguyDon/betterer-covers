@@ -211,13 +211,13 @@ function chooseInitialList(lists: TraktList[]) {
 function mergeRecentUsers(existingUsers: string[], nextUsers: string[]) {
   return [...new Set(
     [...nextUsers, ...existingUsers]
-      .map((value) => value.trim())
+      .map((value) => value?.trim())
       .filter(Boolean),
   )].slice(0, 6)
 }
 
 function normalizeHexColor(value: string) {
-  const normalized = value.trim()
+  const normalized = value?.trim()
 
   if (!/^#[\da-f]{6}$/i.test(normalized)) {
     return null
@@ -376,7 +376,7 @@ function App() {
     TITLE_SIZE_OPTIONS.find((option) => option.id === '100') ??
     TITLE_SIZE_OPTIONS[0]
   const activePalette = buildPalette(selectedList?.name ?? customTitle, detectedBrand)
-  const activeTitle = customTitle.trim() || selectedList?.name || DEFAULT_TITLE
+  const activeTitle = customTitle?.trim() || selectedList?.name || DEFAULT_TITLE
   const usesAlphaBackground =
     backgroundMode === 'transparent' || backgroundMode === 'tint'
   const customStageBackground =
@@ -679,7 +679,7 @@ function App() {
 
   function handleLoadUser(nextUser = sourceUserInput) {
     // This prevents the "undefined is not an object" crash
-    const normalizedUser = nextUser ? nextUser.trim() : "";
+    const normalizedUser = nextUser ? nextUser?.trim() : "";
      if (!normalizedUser || normalizedUser === activeUser) {
       return
     }
