@@ -14,7 +14,7 @@ export function fetchListsForUser(user: string, signal?: AbortSignal) {
   return fetchJson<TraktList[]>(`/api/trakt/users/${encodeURIComponent(user)}/lists`, signal);
 }
 
-export function fetchListItemsForUser({ user, slug, signal }: { user: string; slug: string; signal?: AbortSignal }) {
+export function fetchListItemsForUser(activeUser: string, selectedSlug: string, signal: AbortSignal, { user, slug, signal }: { user: string; slug: string; signal?: AbortSignal; }) {
   return fetchJson<TraktListItem[]>(`/api/trakt/users/${encodeURIComponent(user)}/lists/${encodeURIComponent(slug)}/items`, signal);
 }
 
