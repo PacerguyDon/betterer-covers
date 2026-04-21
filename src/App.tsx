@@ -678,8 +678,7 @@ function App() {
   }
 
   function handleLoadUser(nextUser = sourceUserInput) {
-    const normalizedUser = nextUser.trim()
-
+    const normalizedUser = nextUser ? nextUser.trim() : "";
     if (!normalizedUser || normalizedUser === activeUser) {
       return
     }
