@@ -379,14 +379,5 @@ app.get('/api/poster', async (request, response) => {
   }
 })
 
-if (isProduction) {
-  const distPath = path.join(__dirname, 'dist')
-
-  app.use(express.static(distPath))
-  app.get('/{*path}', (_request, response) => {
-    response.sendFile(path.join(distPath, 'index.html'))
-  })
-}
-
 export default app;
 
