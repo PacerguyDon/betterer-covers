@@ -1,9 +1,18 @@
 {
   "version": 2,
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Cross-Origin-Resource-Policy", "value": "cross-origin" }
+      ]
+    }
+  ],
   "rewrites": [
     {
-      "source": "/api/trakt/poster",
-      "destination": "/api/index.mjs"
+      "source": "/media.trakt.tv/(.*)",
+      "destination": "/api/trakt/poster?src=https://trakt.tv"
     },
     {
       "source": "/api/(.*)",
