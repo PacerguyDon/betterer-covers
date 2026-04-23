@@ -1,5 +1,6 @@
 {
   "version": 2,
+  "cleanUrls": true,
   "redirects": [
     {
       "source": "/media.trakt.tv/:path*",
@@ -9,12 +10,13 @@
   ],
   "rewrites": [
     {
-      "source": "/api/:path*",
+      "source": "/api/(.*)",
       "destination": "/api/index.mjs"
     },
     {
-      "source": "/((?!api/).*)",
+      "source": "/(.*)",
       "destination": "/index.html"
     }
   ]
 }
+
