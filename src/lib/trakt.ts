@@ -33,8 +33,10 @@ export function fetchListItemsForUser(user: string, slug: string, signal?: Abort
   return fetchJson<TraktListItem[]>(`/api/trakt/users/${encodeURIComponent(user)}/lists/${encodeURIComponent(slug)}/items`, signal);
 }
 
-export const toPosterProxyUrl: any = (url: string | null) => {
-  return url ?? '';
+export function toPosterProxyUrl(url: string | null) {
+  if (!url) return '';
+  // This wraps the Trakt URL so Vercel can fetch it for you safely
+  return `/api/trakt/poster?url=${encodeURIComponent(url)}`;
 };
 
 
