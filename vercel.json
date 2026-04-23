@@ -1,22 +1,8 @@
 {
   "version": 2,
-  "cleanUrls": true,
-  "redirects": [
-    {
-      "source": "/media.trakt.tv/:path*",
-      "destination": "https://trakt.tv*",
-      "permanent": false
-    }
-  ],
   "rewrites": [
-    {
-      "source": "/api/(.*)",
-      "destination": "/api/index.mjs"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
+    { "source": "/api/(.*)", "destination": "/api/index.mjs" },
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
 
