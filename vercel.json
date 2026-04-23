@@ -8,10 +8,6 @@
     {
       "source": "/api/:path*",
       "destination": "/api/index.mjs"
-    },
-    {
-      "source": "/((?!api/|media.trakt.tv/).*)",
-      "destination": "/index.html"
     }
   ]
 }
