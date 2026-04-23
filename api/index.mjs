@@ -360,6 +360,8 @@ app.get('/api/trakt/poster', async (request, response) => {
       'Cache-Control',
       remoteResponse.headers.get('cache-control') ?? 'public, max-age=86400',
     )
+    response.setHeader('Access-Control-Allow-Origin', '*');
+    response.setHeader('Cross-Origin-Resource-Policy', 'cross-origin');
     response.setHeader(
       'Content-Type',
       remoteResponse.headers.get('content-type') ?? 'image/webp',
