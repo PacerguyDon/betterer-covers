@@ -2,12 +2,16 @@
   "version": 2,
   "rewrites": [
     {
-      "source": "/media.trakt.tv/:path*",
-      "destination": "/api/trakt/poster?src=https://trakt.tv*"
+      "source": "/api/trakt/poster",
+      "destination": "/api/index.js"
+    },
+    {
+      "source": "/media.trakt.tv/(.*)",
+      "destination": "/api/trakt/poster?src=https://trakt.tv"
     },
     {
       "source": "/api/(.*)",
-      "destination": "/api/index.mjs"
+      "destination": "/api/index.js"
     },
     {
       "source": "/((?!api/).*)",
