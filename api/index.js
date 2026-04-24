@@ -50,7 +50,7 @@ loadEnvFile('.env.local')
 const isProduction = process.env.NODE_ENV === 'production'
 const port = Number(process.env.PORT ?? (isProduction ? 4173 : 8787))
 
-const TRAKT_BASE_URL = 'https://api.trakt.tv'
+const TRAKT_BASE_URL = 'https://trakt.tv'
 const TRAKT_DEFAULT_USER =
   process.env.TRAKT_DEFAULT_USER ?? process.env.TRAKT_USER ?? 'mediashare2000'
 const TRAKT_CLIENT_ID = process.env.TRAKT_CLIENT_ID?.trim() ?? ''
