@@ -331,6 +331,7 @@ app.get('/api/trakt/lists/:slug/items', async (request, response) => {
 })
 
 app.get('/api/trakt/poster', async (request, response) => {
+  console.log('Incoming query params:', request.query);
   const src =
     typeof request.query.src === 'string'
       ? normalizeRemoteUrl(request.query.src)
