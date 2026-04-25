@@ -326,11 +326,11 @@ export function detectBrand(name: string) {
     return BRAND_LIBRARY.find((brand) => brand.id === 'the-cw') ?? null
   }
 
-   if (/\btv\?land\b/.test(lowerName)) {
+     if (/\btv[- ]?land\b/.test(lowerName)) {
     return BRAND_LIBRARY.find((brand) => brand.id === 'tv-land') ?? null
   }
 
-  if (/\bdiscovery\b/.test(lowerName)) {
+     if (/\bdiscovery\b/.test(lowerName)) {
     return BRAND_LIBRARY.find((brand) => brand.id === 'discovery') ?? null
   }
 
@@ -362,11 +362,11 @@ export function detectBrand(name: string) {
     return BRAND_LIBRARY.find((brand) => brand.id === 'amc-plus') ?? null
   }
 
-   if (/\bcommedy\?central\b/.test(lowerName)) {
-    return BRAND_LIBRARY.find((brand) => brand.id === 'commedy-central') ?? null
+   if (/\bcomedy[- ]?central\b/.test(lowerName)) {
+    return BRAND_LIBRARY.find((brand) => brand.id === 'comedy-central') ?? null
   }
 
-   if (/\binvestigation\?ldiscovery\b/.test(lowerName)) {
+     if (/\binvestigation[- ]?discovery\b/.test(lowerName)) {
     return BRAND_LIBRARY.find((brand) => brand.id === 'investigation-discovery') ?? null
   }
 
