@@ -176,7 +176,7 @@ const BRAND_LIBRARY: BrandDefinition[] = [
     kind: 'mask',
     asset: '/logos/history.svg',
     accent: 'f7a800',
-    logoWidth: '50%',
+    logoWidth: '35%',
     aspectRatio: 1000 / 1049,
   },
   {
