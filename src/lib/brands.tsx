@@ -120,7 +120,7 @@ const BRAND_LIBRARY: BrandDefinition[] = [
     id: 'tv-land',
     label: 'TV Land',
     kind: 'mask',
-    asset: '/logos/tv-landsvg',
+    asset: '/logos/tv-land.svg',
     accent: '#00a9e0',
     logoWidth: '50%',
     aspectRatio: 1000 / 346,
