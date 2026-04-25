@@ -219,7 +219,7 @@ export function detectBrand(name: string) {
     return BRAND_LIBRARY.find((brand) => brand.id === 'the-cw') ?? null
   }
 
-   if (/\btv\land?\b/.test(lowerName)) {
+   if (/\btv\?land\b/.test(lowerName)) {
     return BRAND_LIBRARY.find((brand) => brand.id === 'tv-land') ?? null
   }
 
