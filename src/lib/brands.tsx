@@ -366,7 +366,7 @@ export function detectBrand(name: string) {
     return BRAND_LIBRARY.find((brand) => brand.id === 'comedy-central') ?? null
   }
 
-     if (/\binvestigation[- ]?discovery\b/.test(lowerName)) {
+    if (/\binvestigation[- ]?discovery\b/.test(lowerName)) {
     return BRAND_LIBRARY.find((brand) => brand.id === 'investigation-discovery') ?? null
   }
 
