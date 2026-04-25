@@ -107,6 +107,15 @@ const BRAND_LIBRARY: BrandDefinition[] = [
     logoWidth: '22%',
     aspectRatio: 1,
   },
+   {
+    id: 'the-cw',
+    label: 'The CW',
+    kind: 'mask',
+    asset: '/logos/the-cw.svg',
+    accent: '#ff4500',
+    logoWidth: '50%',
+    aspectRatio: 1000 / 401,
+  },
 ]
 
 const FALLBACK_ACCENTS = [
