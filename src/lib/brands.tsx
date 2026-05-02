@@ -280,7 +280,7 @@ const BRAND_LIBRARY: BrandDefinition[] = [
   },
   {
     id: 'paramount',
-    label: 'Paramount',
+    label: 'Paramount Pictures',
     kind: 'mask',
     asset: '/logos/paramount.svg',
     accent: '#035ae8',
@@ -374,6 +374,10 @@ export function detectBrand(name: string) {
 
   if (/\bhbo\s*max\b/.test(lowerName)) {
     return BRAND_LIBRARY.find((brand) => brand.id === 'hbo-max') ?? null
+  }
+
+  if (/\bparamount\b/.test(lowerName)) {
+    return BRAND_LIBRARY.find((brand) => brand.id === 'paramount') ?? null
   }
 
   if (/\bnetflix\b/.test(lowerName)) {
@@ -483,11 +487,7 @@ export function detectBrand(name: string) {
   if (/\bmgm\b/.test(lowerName)) {
     return BRAND_LIBRARY.find((brand) => brand.id === 'mgm') ?? null
   }
-
-  if (/\bparamount\b/.test(lowerName)) {
-    return BRAND_LIBRARY.find((brand) => brand.id === 'paramount') ?? null
-  }
-
+  
   if (/\bpixar\b/.test(lowerName)) {
     return BRAND_LIBRARY.find((brand) => brand.id === 'pixar') ?? null
   }
