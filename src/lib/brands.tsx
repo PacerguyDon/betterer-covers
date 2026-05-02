@@ -249,7 +249,7 @@ const BRAND_LIBRARY: BrandDefinition[] = [
     asset: '/logos/20th.svg',
     accent: '#f3ba2f',
     logoWidth: '50%',
-    aspectRatio: 1000 / 821,
+    aspectRatio: 170 / 150,
   },
   {
     id: 'columbia',
