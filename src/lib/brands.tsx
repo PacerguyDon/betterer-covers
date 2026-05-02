@@ -233,6 +233,15 @@ const BRAND_LIBRARY: BrandDefinition[] = [
     logoWidth: '65%',
     aspectRatio: 248 / 127,
   },
+  {
+    id: 'hgtv',
+    label: 'HGTV',
+    kind: 'mask',
+    asset: '/logos/hgtv.svg',
+    accent: '#17b890',
+    logoWidth: '50%',
+    aspectRatio: 215 / 104,
+  },
 ]
 
 const FALLBACK_ACCENTS = [
