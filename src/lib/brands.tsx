@@ -116,6 +116,15 @@ const BRAND_LIBRARY: BrandDefinition[] = [
     logoWidth: '22%',
     aspectRatio: 1,
   },
+  {
+    id: 'angel',
+    label: 'Angel Studios',
+    kind: 'mask',
+    asset: '/logos/anghel.svg',
+    accent: '#5a470f',
+    logoWidth: '70%',
+    aspectRatio: 90 / 32,
+  },
    {
     id: 'the-cw',
     label: 'The CW',
@@ -389,6 +398,10 @@ export function detectBrand(name: string) {
 
   if (/\bhulu\b/.test(lowerName)) {
     return BRAND_LIBRARY.find((brand) => brand.id === 'hulu') ?? null
+  }
+
+  if (/\bangel\b/.test(lowerName)) {
+    return BRAND_LIBRARY.find((brand) => brand.id === 'angel') ?? null
   }
   
   if (/\bpeacock\b/.test(lowerName)) {
