@@ -120,7 +120,7 @@ const BRAND_LIBRARY: BrandDefinition[] = [
     id: 'angel',
     label: 'Angel Studios',
     kind: 'mask',
-    asset: '/logos/anghel.svg',
+    asset: '/logos/angel.svg',
     accent: '#5a470f',
     logoWidth: '70%',
     aspectRatio: 90 / 32,
@@ -315,7 +315,7 @@ const BRAND_LIBRARY: BrandDefinition[] = [
     aspectRatio: 1000 / 529,
   },
   {
-    id: 'wb',
+    id: 'warner-bros',
     label: 'Warner Bros',
     kind: 'mask',
     asset: '/logos/wb.svg',
@@ -420,6 +420,10 @@ export function detectBrand(name: string) {
     return BRAND_LIBRARY.find((brand) => brand.id === '20th-century-fox') ?? null
   }
 
+  if (/\bwarner\bbros?\b/.test(lowerName)) {
+    return BRAND_LIBRARY.find((brand) => brand.id === 'warner-bros') ?? null
+  }
+
    if (/\bthe[- ]?cw\b/.test(lowerName)) {
     return BRAND_LIBRARY.find((brand) => brand.id === 'the-cw') ?? null
   }
@@ -499,11 +503,6 @@ export function detectBrand(name: string) {
   if (/\buniversal\b/.test(lowerName)) {
     return BRAND_LIBRARY.find((brand) => brand.id === 'universal') ?? null
   }
-
-  if (/\bwb\b/.test(lowerName)) {
-    return BRAND_LIBRARY.find((brand) => brand.id === 'wb') ?? null
-  }
-
 
   return null
 }
