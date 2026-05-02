@@ -243,8 +243,8 @@ const BRAND_LIBRARY: BrandDefinition[] = [
     aspectRatio: 215 / 104,
   },
   {
-    id: '20th-centuray-fox',
-    label: '20th Centuray Fox',
+    id: '20th-century-fox',
+    label: '20th Century Fox',
     kind: 'mask',
     asset: '/logos/20th.svg',
     accent: '#f3ba2f',
@@ -399,8 +399,8 @@ export function detectBrand(name: string) {
     return BRAND_LIBRARY.find((brand) => brand.id === 'max') ?? null
   }
 
-   if (/\bmax\b/.test(lowerName)) {
-    return BRAND_LIBRARY.find((brand) => brand.id === 'max') ?? null
+    if (/\b20th\s*century(?:\s*fox)?\b/.test(lowerName)) {
+    return BRAND_LIBRARY.find((brand) => brand.id === '20th-century-fox') ?? null
   }
 
    if (/\bthe[- ]?cw\b/.test(lowerName)) {
@@ -489,10 +489,6 @@ export function detectBrand(name: string) {
 
   if (/\bwb\b/.test(lowerName)) {
     return BRAND_LIBRARY.find((brand) => brand.id === 'wb') ?? null
-  }
-
-  if (/\b20th\s*century\fox?\b/.test(lowerName)) {
-    return BRAND_LIBRARY.find((brand) => brand.id === '20th-century-fox') ?? null
   }
 
 
