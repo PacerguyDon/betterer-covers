@@ -386,6 +386,11 @@ export function detectBrand(name: string) {
   if (/\ba\s*(?:&|and)\s*e\b/.test(lowerName)) {
     return BRAND_LIBRARY.find((brand) => brand.id === 'a&e') ?? null 
   }
+  
+  if (/\bhgtv\b/.test(lowerName)) {
+    return BRAND_LIBRARY.find((brand) => brand.id === 'hgtv') ?? null
+  }
+
 
   return null
 }
