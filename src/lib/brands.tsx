@@ -529,3 +529,4 @@ export function buildPalette(seed: string, brand: BrandDefinition | null): Cover
     line: withAlpha(accent, 0.34),
   }
 }
+}
