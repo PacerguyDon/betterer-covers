@@ -248,7 +248,7 @@ const BRAND_LIBRARY: BrandDefinition[] = [
     kind: 'mask',
     asset: '/logos/harry-potter.svg',
     accent: '#fdc600',
-    logoWidth: '40%',
+    logoWidth: '60%',
     aspectRatio: 2180 / 743,
   },
   {
