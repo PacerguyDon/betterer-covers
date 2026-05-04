@@ -116,7 +116,7 @@ const BRAND_LIBRARY: BrandDefinition[] = [
     logoWidth: '22%',
     aspectRatio: 1,
   },
-   {
+  {
     id: 'james-bond',
     label: 'James Bond',
     kind: 'mask',
@@ -412,9 +412,11 @@ export function detectBrand(name: string) {
   if (/\bhulu\b/.test(lowerName)) {
     return BRAND_LIBRARY.find((brand) => brand.id === 'hulu') ?? null
 
-  if (/\bjames\s+bond\b|\bbond\s+video\b/.test(lowerName)) {
+
+  if (/\bjames\bond?\b/.test(lowerName)) {
     return BRAND_LIBRARY.find((brand) => brand.id === 'james-bond') ?? null
   }  
+  
 
   if (/\bangel\b/.test(lowerName)) {
     return BRAND_LIBRARY.find((brand) => brand.id === 'angel') ?? null
@@ -528,5 +530,4 @@ export function buildPalette(seed: string, brand: BrandDefinition | null): Cover
     glow: withAlpha(accent, brand ? 0.22 : 0.18),
     line: withAlpha(accent, 0.34),
   }
-}
 }
