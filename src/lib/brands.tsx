@@ -176,7 +176,7 @@ const BRAND_LIBRARY: BrandDefinition[] = [
     kind: 'mask',
     asset: '/logos/tv-land.svg',
     accent: '#00a9e0',
-    logoWidth: '35%',
+    logoWidth: '45%',
     aspectRatio: 2500 / 2500,
   },
   {
