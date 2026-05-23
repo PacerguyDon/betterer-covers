@@ -257,7 +257,7 @@ const BRAND_LIBRARY: BrandDefinition[] = [
     kind: 'mask',
     asset: '/logos/a&e.svg',
     accent: '#000000',
-    logoWidth: '40%',
+    logoWidth: '30%',
     aspectRatio: 221 / 114.75,
   },
   {
