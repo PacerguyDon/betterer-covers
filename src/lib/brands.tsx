@@ -77,7 +77,7 @@ const BRAND_LIBRARY: BrandDefinition[] = [
     kind: 'mask',
     asset: '/logos/walt-disney-pictures.svg',
     accent: '#0d74ff',
-    logoWidth: '35%',
+    logoWidth: '50%',
     aspectRatio: 2174 / 2500,
   },
   {
@@ -176,7 +176,7 @@ const BRAND_LIBRARY: BrandDefinition[] = [
     kind: 'mask',
     asset: '/logos/tv-land.svg',
     accent: '#00a9e0',
-    logoWidth: '50%',
+    logoWidth: '40%',
     aspectRatio: 2500 / 2500,
   },
   {
@@ -185,7 +185,7 @@ const BRAND_LIBRARY: BrandDefinition[] = [
     kind: 'mask',
     asset: '/logos/star-wars.svg',
     accent: '#4c3600',
-    logoWidth: '50%',
+    logoWidth: '40%',
     aspectRatio: 2500 / 1070,
   },
   {
@@ -194,7 +194,7 @@ const BRAND_LIBRARY: BrandDefinition[] = [
     kind: 'mask',
     asset: '/logos/abc.svg',
     accent: '#000000',
-    logoWidth: '35%',
+    logoWidth: '40%',
     aspectRatio: 150 / 150,
   },
   {
@@ -221,7 +221,7 @@ const BRAND_LIBRARY: BrandDefinition[] = [
     kind: 'mask',
     asset: '/logos/nbc.svg',
     accent: '#0089d0',
-    logoWidth: '35%',
+    logoWidth: '40%',
     aspectRatio: 453 / 479,
   },
   {
@@ -230,7 +230,7 @@ const BRAND_LIBRARY: BrandDefinition[] = [
     kind: 'mask',
     asset: '/logos/history.svg',
     accent: 'f7a800',
-    logoWidth: '35%',
+    logoWidth: '40%',
     aspectRatio: 800 / 839,
   },
   {
@@ -239,7 +239,7 @@ const BRAND_LIBRARY: BrandDefinition[] = [
     kind: 'mask',
     asset: '/logos/lifetime.svg',
     accent: '#c2002f',
-    logoWidth: '50%',
+    logoWidth: '45%',
     aspectRatio: 897 / 272,
   },
   {
@@ -302,7 +302,7 @@ const BRAND_LIBRARY: BrandDefinition[] = [
     kind: 'mask',
     asset: '/logos/the-wb.svg',
     accent: '#002272',
-    logoWidth: '65%',
+    logoWidth: '50%',
     aspectRatio: 248 / 127,
   },
   {
@@ -338,7 +338,7 @@ const BRAND_LIBRARY: BrandDefinition[] = [
     kind: 'mask',
     asset: '/logos/mgm.svg',
     accent: '#f3a82f',
-    logoWidth: '30%',
+    logoWidth: '45%',
     aspectRatio: 1000 / 583,
   },
   {
@@ -347,7 +347,7 @@ const BRAND_LIBRARY: BrandDefinition[] = [
     kind: 'mask',
     asset: '/logos/paramount.svg',
     accent: '#035ae8',
-    logoWidth: '30%',
+    logoWidth: '50%',
     aspectRatio: 358 / 280,
   },
   {
