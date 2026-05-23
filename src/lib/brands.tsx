@@ -203,7 +203,7 @@ const BRAND_LIBRARY: BrandDefinition[] = [
     kind: 'mask',
     asset: '/logos/cbs.svg',
     accent: '#005daa',
-    logoWidth: '50%',
+    logoWidth: '40%',
     aspectRatio: 1000 / 288,
   },
   {
@@ -266,7 +266,7 @@ const BRAND_LIBRARY: BrandDefinition[] = [
     kind: 'mask',
     asset: '/logos/comedy-central.svg',
     accent: '#fdc600',
-    logoWidth: '50%',
+    logoWidth: '40%',
     aspectRatio: 1000 / 345,
   },
   {
