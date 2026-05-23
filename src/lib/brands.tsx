@@ -95,7 +95,7 @@ const BRAND_LIBRARY: BrandDefinition[] = [
     kind: 'mask',
     asset: '/logos/dc-universe.svg',
     accent: '#020c19',
-    logoWidth: '30%',
+    logoWidth: '45%',
     aspectRatio: 400 / 388,
   },
   {
