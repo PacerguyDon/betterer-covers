@@ -383,8 +383,8 @@ const BRAND_LIBRARY: BrandDefinition[] = [
     kind: 'mask',
     asset: '/logos/wb.svg',
     accent: '#0374f5',
-    logoWidth: '25%',
-    aspectRatio: 355 / 370,
+    logoWidth: '50%',
+    aspectRatio: 630 / 122,
   },
 ]
 
