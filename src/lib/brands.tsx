@@ -149,7 +149,7 @@ const BRAND_LIBRARY: BrandDefinition[] = [
     kind: 'mask',
     asset: '/logos/james-bond.svg',
     accent: '#35c1f1',
-    logoWidth: '55%',
+    logoWidth: '40%',
     aspectRatio: 66 / 21,
   },
   {
