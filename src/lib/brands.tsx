@@ -347,7 +347,7 @@ const BRAND_LIBRARY: BrandDefinition[] = [
     kind: 'mask',
     asset: '/logos/paramount.svg',
     accent: '#035ae8',
-    logoWidth: '30%',
+    logoWidth: '40%',
     aspectRatio: 358 / 280,
   },
   {
